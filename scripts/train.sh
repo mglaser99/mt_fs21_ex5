@@ -16,11 +16,11 @@ SECONDS=0
 
 logs=$base/logs
 
-model_name=transformer_sample_config
+model_name=transformer_sample_config_tokenized # transformer_sample_config_bpe2k, transformer_sample_config_bpe5k
 
 mkdir -p $logs
 
-mkdir -p $logs/$model_name
+mkdir -p $logs/$model_name 
 
 OMP_NUM_THREADS=$num_threads python -m joeynmt train $configs/$model_name.yaml > $logs/$model_name/out 2> $logs/$model_name/err
 

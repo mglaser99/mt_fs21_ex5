@@ -17,5 +17,9 @@ rm $base/data.ex5.tar.gz
 echo "Sizes of data files:"
 wc -l $data/*
 
+mkdir $data/de-nl
+
+mv $data/*.de-nl.* $data/de-nl/
+
 # sanity checks
 echo "At this point, please make sure that 1) number of lines are as expected, 2) language suffixes are correct and 3) files are parallel"

@@ -1,23 +1,23 @@
-name: "transformer_sample_config"
+name: "transformer_sample_config_bpe5k"
 
 data:
-    src: "?"
-    trg: "?"
-    train: "?"
-    dev:   "?"
-    test:  "?"
-    level: "?"
+    src: "de"
+    trg: "nl"
+    train: "data/de-nl/train.de-nl.100k.bpe5k"
+    dev:   "data/de-nl/dev.de-nl.bpe5k"
+    test:  "data/de-nl/test.de-nl.bpe5k"
+    level: "bpe" # word
     lowercase: False
     max_sent_length: 100
     # either use a vocabulary limit:
-    src_voc_limit: ?
-    trg_voc_limit: ?
+    #src_voc_limit: 2000
+    #trg_voc_limit: 2000
     # or (= not both!) a file with a vocabulary built before starting the training:
-    src_vocab: "?"
-    trg_vocab: "?"
+    src_vocab: "data/de-nl/vocab/joint_vocab.5k.bpe"
+    trg_vocab: "data/de-nl/vocab/joint_vocab.5k.bpe"
 
 testing:
-    beam_size: ?
+    beam_size: 5 # ?
     alpha: 1.0
 
 training:
@@ -38,7 +38,7 @@ training:
     validation_freq: 500
     logging_freq: 100
     eval_metric: "bleu"
-    model_dir: "?"
+    model_dir: "models/transformer_sample_config_bpe5k"
     overwrite: False
     shuffle: True
     use_cuda: False
@@ -52,7 +52,7 @@ model:
     init_gain: 1.0
     embed_initializer: "xavier"
     embed_init_gain: 1.0
-    tied_embeddings: True
+    tied_embeddings: True #False
     tied_softmax: True
     encoder:
         type: "transformer"
