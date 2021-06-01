@@ -1,5 +1,7 @@
 # 2 Experiments with Byte Pair Encoding
 
+For this exercise I chose the translation direction de-nl. All the steps are therefore only run on the respective data.
+
 I added multiple shell scripts that run all the required steps of exercise 2. To run them in the right order I added them to the instructions below.
 
 In order to train the different models with the train.sh script only the model_name variable in the scripts needs to be adapted to the respective model name.
