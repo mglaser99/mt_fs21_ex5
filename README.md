@@ -1,3 +1,13 @@
+# 2 Experiments with Byte Pair Encoding
+
+I added multiple shell scripts that run all the required steps of exercise 2. To run them in the right order I added them to the instructions below.
+
+In order to train the different models with the train.sh script only the model_name variable in the scripts needs to be adapted to the respective model name.
+
+# 3 Impact of beam size on translation quality
+
+The evaluate_beamsize.sh script evaluates the transformer_sample_config_bpe5k model with 10 different beam sizes from 1-10.
+
 # mt_fs21_ex5
 
 This repo is just a collection of scripts showing how to install [JoeyNMT](https://github.com/joeynmt/joeynmt), download
@@ -31,6 +41,26 @@ Download data:
 
     ./download_iwslt_2017_data.sh
 
+Create train files with 100k samples:
+	
+	./scripts/sub_samples.sh
+
+Tokenize the data:
+
+	./scripts/tokenize.sh
+
+Train two BPE models (with vocab sizes 2k and 5k):
+
+	./scripts/train_bpe_model.sh
+
+Apply BPE models on data:
+
+	./scripts/bpe_tokenize.sh
+
+Build joint vocabulary for the BPE-level JoeyNMT model:
+
+	./scripts/build_joint_vocab.sh
+
 Train a model:
 
     ./scripts/train.sh
@@ -40,3 +70,7 @@ The training process can be interrupted at any time, and the best checkpoint wil
 Evaluate a trained model with
 
     ./scripts/evaluate.sh
+
+Evaluate a model with 10 different beam sizes:
+
+	./scripts/evaluate_beamsize.sh
