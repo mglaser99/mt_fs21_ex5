@@ -4,7 +4,7 @@ For this exercise I chose the translation direction de-nl. All the steps are the
 
 I added multiple shell scripts that run all the required steps of exercise 2. To run them in the right order I added them to the instructions below.
 
-In order to train the different models with the train.sh script only the model_name variable in the scripts needs to be adapted to the respective model name.
+None of the scripts should need any further changes except for train.sh. In order to train the different models with the script the variable model_name in the script needs to be adapted to the respective model name.
 
 # 3 Impact of beam size on translation quality
 
@@ -69,7 +69,7 @@ Train a model:
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved.
 
-Evaluate a trained model with
+Evaluate a trained model with (the scripts evaluates all 3 models):
 
     ./scripts/evaluate.sh
 
